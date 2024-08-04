@@ -22,4 +22,14 @@ def post_detail(request, post_id):
 
 
 def post_add(request):
+    if request.method == 'POST':
+        print("method POST")
+        title = request.POST['title']
+        content = request.POST['content']
+        print(title)
+        print(content)
+    else:
+        print("method GET")
+
+    # POST/GET 중 어느 요청이든 render 결과를 리턴
     return render(request, 'post_add.html')
